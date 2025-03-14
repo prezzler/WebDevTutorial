@@ -1,0 +1,22 @@
+<table>
+    <thead>
+        <tr>
+            <th scope="col">Year</th>
+            <th scope="col">Investment Value</th>
+            <th scope="col">Interest (Year)</th>
+            <th scope="col">Total Interest</th>
+            <th scope="col">Invested Capital</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (annualInfo of calculatedAnnualData;  track annualInfo.year){
+            <tr>
+                <td>{{annualInfo.year}}</td>
+                <td>{{annualInfo.valueEndOfYear | currency:"USD" }}</td>
+                <td>{{annualInfo.interest | currency:"USD"}}</td>
+                <td>{{annualInfo.totalInterest| currency:"USD"}}</td>
+                <td>{{annualInfo.totalAmountInvested| currency:"USD"}}</td>
+            </tr>
+        }
+    </tbody>
+</table>
